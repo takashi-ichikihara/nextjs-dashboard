@@ -1,0 +1,75 @@
+// .vscode/settings.json
+{
+
+
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  },
+  "typescript.suggest.enabled": true,
+  "typescript.autoImportSuggestions.enabled": true,
+  // 1) Evita que o VSCode fique monitorando alterações em pastas pesadas
+  "files.watcherExclude": {
+    "**/node_modules/**": true, // Pasta de dependências (muito grande)
+    "**/.git/**": true, // Repositório Git
+    "**/build/**": true, // Arquivos gerados
+    "**/public/**": true, // Conteúdo estático
+    "**/.next/**": true // Pasta de build do Next.js
+  },
+  // 2) Evita que essas pastas sejam compartilhadas durante uma sessão do Live Share
+  "liveshare.fileShare.exclude": [
+    "node_modules/**",
+    ".git/**",
+    "build/**"
+  ],
+  // 3) Desativa recursos de áudio e vídeo do Live Share
+  "liveshare.audio.enabled": false,
+  "liveshare.video.enabled": false,
+  // 4) Ativa logs detalhados do Live Share para debug (remover depois de resolver problemas)
+  "liveshare.trace.level": "verbose",
+  // 5) Desativa o minimapa no editor (aquela visualização lateral do código)
+  "editor.minimap.enabled": false,
+  // 6) Ajustes na rolagem
+  "editor.scrollBeyondLastLine": false, // Impede rolagem além da última linha
+  "editor.scrollbar.vertical": "auto", // Barra de rolagem vertical automática
+  "editor.scrollbar.useShadows": false, // Remove sombra do scroll
+  // 7) Aumenta o recuo visual de subpastas no Explorer
+  "workbench.tree.indent": 20,
+  // 8) Define o terminal padrão como Git Bash (no Windows)
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  // 9) Evita que arquivos abram em modo de preview (para não substituir abas abertas)
+  "workbench.editor.enablePreview": true, // Ativa preview ao clicar no Explorer
+  "workbench.editor.enablePreviewFromQuickOpen": true, // Ativa preview ao abrir pelo Ctrl+P
+  "workbench.editor.labelFormat": "short", // Mostra apenas o nome do arquivo nas abas
+  // Define o nível de zoom da interface
+  "window.zoomLevel": 1,
+  // 10) Evita que VSCode compacte visualmente pastas com um único nível
+  "explorer.compactFolders": false,
+  // 11) Desativa o hover (tooltip com info ao passar o mouse no código)
+  "editor.hover.enabled": true,
+  // Usa aliases (ex: @components) em vez de caminhos relativos nas importações
+  // "typescript.preferences.importModuleSpecifier": "non-relative",
+  // "javascript.preferences.importModuleSpecifier": "non-relative",
+  // 12) Personaliza a cor dos comentários no código
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "comment",
+        "settings": {
+          "foreground": "#02ccff7c" // Azul claro e translúcido
+        }
+      }
+    ]
+  },
+  // 13) Usa a versão do TypeScript instalada no projeto
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  //Essa configuração vai garantir que o VS Code sempre use finais de linha LF no seu projeto, independentemente do sistema operacional que você está usando. Isso também ajuda a evitar o aviso que você mencionou do Git.
+  "files.eol": "\n", // Força finais de linha LF
+  "editor.insertSpaces": true, // Usa espaços ao invés de tabs
+  "editor.tabSize": 2, // Define o tamanho da indentação como 2 espaços
+  "editor.formatOnSave": true, // Formata o código automaticamente ao salvar
+  "editor.trimAutoWhitespace": true, // Remove espaços desnecessários ao salvar
+  "files.trimTrailingWhitespace": true, // Remove espaços em branco no final das linhas
+  "files.insertFinalNewline": true // Garante que o arquivo termine com uma nova linha
+}
